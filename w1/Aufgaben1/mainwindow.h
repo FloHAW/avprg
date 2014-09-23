@@ -16,10 +16,17 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_actionKreise_triggered();
+
+    void on_actionPunkte_triggered();
+
+    void on_actionZebrastreifen_triggered();
+
+    void on_actionFarbiges_Schachbrett_triggered();
+
+    void on_actionSchachbrett_triggered();
 
 private:
-    void testImage();
     void showMat(const cv::Mat& mat);
     Ui::MainWindow *ui;
 };

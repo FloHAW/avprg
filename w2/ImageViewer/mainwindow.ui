@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>475</width>
-    <height>461</height>
+    <width>464</width>
+    <height>380</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Aufgabe2</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QLabel" name="imageLabel">
@@ -19,8 +19,8 @@
      <rect>
       <x>30</x>
       <y>20</y>
-      <width>400</width>
-      <height>300</height>
+      <width>381</width>
+      <height>231</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -29,18 +29,11 @@
     <property name="text">
      <string/>
     </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>370</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
+    <property name="scaledContents">
+     <bool>false</bool>
     </property>
-    <property name="text">
-     <string>HelloWorld</string>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>
@@ -49,20 +42,23 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>475</width>
+     <width>464</width>
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuAufgaben">
+    <property name="title">
+     <string>Aufgaben</string>
+    </property>
+    <addaction name="action_ffnen"/>
+   </widget>
+   <addaction name="menuAufgaben"/>
   </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
-  <widget class="QStatusBar" name="statusBar"/>
+  <action name="action_ffnen">
+   <property name="text">
+    <string>Öffnen ...</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

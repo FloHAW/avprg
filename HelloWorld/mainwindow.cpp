@@ -9,7 +9,6 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    testImage();
 }
 
 MainWindow::~MainWindow()
@@ -23,7 +22,7 @@ void MainWindow::testImage(){
     Mat image(300, 400, CV_8UC3, yellow);
 
     Scalar red = Scalar(0, 0, 255);
-    rectangle(image, Point(100,100), Point(200,200), red, 3);
+    rectangle(image, Point(100,100), Point(200,200), red, CV_FILLED);
 
     Scalar cyan = Scalar(255, 255, 0);
     putText(image, "Hello World", Point(50, 150), FONT_HERSHEY_SIMPLEX, 2, cyan, 2);
@@ -42,4 +41,10 @@ void MainWindow::showMat(const Mat &mat){
 
     // set QPixmap object for QLabel
     ui->imageLabel->setPixmap(pixmap);
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    testImage();
+
 }

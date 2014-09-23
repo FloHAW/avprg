@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>464</width>
+    <height>479</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Aufgaben1</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="imageLabel">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>400</width>
+      <height>400</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>464</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuAufgaben">
+    <property name="title">
+     <string>Aufgaben</string>
+    </property>
+    <addaction name="actionKreise"/>
+    <addaction name="actionPunkte"/>
+    <addaction name="actionZebrastreifen"/>
+    <addaction name="actionSchachbrett"/>
+    <addaction name="actionFarbiges_Schachbrett"/>
+   </widget>
+   <addaction name="menuAufgaben"/>
+  </widget>
+  <action name="actionKreise">
+   <property name="text">
+    <string>Kreise</string>
+   </property>
+  </action>
+  <action name="actionPunkte">
+   <property name="text">
+    <string>Punkte</string>
+   </property>
+  </action>
+  <action name="actionZebrastreifen">
+   <property name="text">
+    <string>Zebrastreifen</string>
+   </property>
+  </action>
+  <action name="actionSchachbrett">
+   <property name="text">
+    <string>Schachbrett</string>
+   </property>
+  </action>
+  <action name="actionFarbiges_Schachbrett">
+   <property name="text">
+    <string>farbiges Schachbrett</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

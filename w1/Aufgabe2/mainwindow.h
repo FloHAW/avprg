@@ -16,10 +16,13 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
+
+    void on_action_ffnen_triggered();
+
 
 private:
-    void testImage();
+    cv::Mat MainWindow::rescale(cv::Mat &mat);
+
     void showMat(const cv::Mat& mat);
     Ui::MainWindow *ui;
 };
