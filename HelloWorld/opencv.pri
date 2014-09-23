@@ -1,6 +1,6 @@
 
 win32 {
-#  für Windows muss die Umgebungsvariable OPENCV_DIR gesetzt sein 
+#  fÃ¼r Windows muss die Umgebungsvariable OPENCV_DIR gesetzt sein 
 #  auf den Pfad der OpenCV-Installation
 #  Beispiel: C:\OPENCV\opencv-2.4.9\build\x86\vc12
 
@@ -13,4 +13,9 @@ macx {
     INCLUDEPATH += /usr/local/include
     LIBS += -L/usr/local/lib
     LIBS +=  -lopencv_core -lopencv_highgui -lopencv_imgproc
+}
+linux* {
+    QT_CONFIG -= no-pkg-config
+    CONFIG += link_pkgconfig
+    PKGCONFIG += opencv
 }
