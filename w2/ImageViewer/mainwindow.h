@@ -21,7 +21,7 @@ private slots:
 
 
 private:
-    cv::Mat MainWindow::rescale(cv::Mat &mat);
+    cv::Mat rescale(cv::Mat &mat);
     Ui::MainWindow *ui;
 };
 
