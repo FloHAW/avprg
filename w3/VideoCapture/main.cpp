@@ -11,9 +11,9 @@ int main(int argc, char *argv[])
     std::string videoFilePath = "C:/Users/Andreas/Dropbox/Micro-dance_2_.avi";
 
     // Videodatei öffnen
-    videoCapture.open(videoFilePath);
+    // videoCapture.open(videoFilePath);
     // Alternativ: Kamera öffnen; Device 0
-    // videoCapture.open(0);
+     videoCapture.open(0);
 
     while(true){
         Mat videoFrame;
