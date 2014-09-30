@@ -15,7 +15,7 @@ macx {
     LIBS +=  -lopencv_core -lopencv_highgui -lopencv_imgproc
 }
 linux {
-	INCLUDEPATH += /usr/local/include
+    INCLUDEPATH += /usr/local/include
     LIBS += -L/usr/local/lib
     LIBS +=  -lopencv_core -lopencv_highgui -lopencv_imgproc
 }
