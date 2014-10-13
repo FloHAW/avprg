@@ -1,16 +1,16 @@
-#include "colorkeyer.h"
+#include "colorkeyerrgb.h"
 
 using namespace cv;
 
 
 const Vec3b REFERENCE_COLOR(54, 39, 97);	// BGR
-const int THRESHOLD = 10;
+const int THRESHOLD = 16;
 
-ColorKeyer::ColorKeyer()
+ColorKeyerRGB::ColorKeyerRGB()
 {
 }
 
-Mat ColorKeyer::process(const Mat &input){
+Mat ColorKeyerRGB::process(const Mat &input){
     Mat output(input.rows, input.cols, CV_8UC1);
     for(int x = 0; x < input.cols; x++){
         for(int y = 0; y < input.rows; y++){
@@ -28,3 +28,4 @@ Mat ColorKeyer::process(const Mat &input){
     }
     return output;
 }
+
