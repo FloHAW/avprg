@@ -7,6 +7,9 @@ ColorKeyerHSV::ColorKeyerHSV()
     : hueUpperThreshold(340/2)
     , hueLowerThreshold(360/2)
     , saturationThreshold(120)
+    , alpha(0)
+    , useMedian(false)
+    , useOpening(false)
 {
 }
 
@@ -15,14 +18,32 @@ Mat ColorKeyerHSV::process(const Mat &input){
     Mat hsvFrame;
     cvtColor(input, hsvFrame, CV_BGR2HSV);
 
+    // perform color keying
+    Mat binaryMask = colorKeying(hsvFrame);
+
+    if (useMedian){
+        medianBlur(binaryMask, binaryMask, 5);
+    }
+
+    if (useOpening){
+        erode(binaryMask, binaryMask, Mat());
+        dilate(binaryMask, binaryMask, Mat());
+    }
+
+    // calculate center of mass
+    centerOfMass(binaryMask);
+
+    // convert binary Image to 3 channel image
+    Mat output;
+    cvtColor(binaryMask, output, CV_GRAY2BGR);
+    drawCross(output, center, 5, Scalar(0, 255, 0));
+
+    return output;
+}
+Mat ColorKeyerHSV::colorKeying(Mat& hsvFrame){
     // initialize Mat object for output
-    Mat output(input.rows, input.cols, CV_8UC3);
+    Mat output(hsvFrame.rows, hsvFrame.cols, CV_8UC1);
 
-
-    // analyse pixel
-    int numWhitePixels = 0;
-    int sumx = 0;
-    int sumy = 0;
     for(int x = 0; x < hsvFrame.cols; x++){
         for(int y = 0; y < hsvFrame.rows; y++){
             Vec3b hsvPixel = hsvFrame.at<Vec3b>(y,x);
@@ -44,22 +65,32 @@ Mat ColorKeyerHSV::process(const Mat &input){
                 }
             }
             if (isWhite){
-                output.at<Vec3b>(y,x) = Vec3b(255, 255, 255);
-                sumx += x;
-                sumy += y;
-                numWhitePixels++;
+                output.at<uchar>(y,x) = 255;
             }
             else{
-                output.at<Vec3b>(y,x) = Vec3b(0, 0, 0);
+                output.at<uchar>(y,x) = 0;
             }
         }
     }
-    if (numWhitePixels > 0){
-        Point center(sumx/numWhitePixels, sumy/numWhitePixels);
-        drawCross(output, center, 5, Scalar(0, 255, 0));
-        qDebug() << (sumx/numWhitePixels) << ", " << (sumy/numWhitePixels);
-    }
     return output;
+}
+
+void ColorKeyerHSV::centerOfMass(Mat& image){
+    int sumx = 0;
+    int sumy = 0;
+    int count = 0;
+    for(int x = 0; x < image.cols; x++){
+        for (int y = 0; y < image.rows; y++){
+            if (image.at<uchar>(y,x) == 255){
+                sumx += x;
+                sumy += y;
+                count++;
+            }
+        }
+    }
+    if (count > 0){
+        center = (1 - alpha) * center + alpha * Point(sumx/count, sumy/count);
+    }
 }
 
 void ColorKeyerHSV::drawCross(Mat& image, Point center, int length, Scalar color){
@@ -80,4 +111,15 @@ void ColorKeyerHSV::setHueUpperThreshold(int value){
 void ColorKeyerHSV::setSaturationThreshold(int value){
     saturationThreshold = value/2;
     qDebug() << "saturationThreshold: " << value;
+}
+void ColorKeyerHSV::setAlpha(float alpha){
+    this->alpha = alpha;
+}
+
+void ColorKeyerHSV::setMedianEnable(bool enable){
+    this->useMedian = enable;
+}
+
+void ColorKeyerHSV::setOpeningEnable(bool enable){
+    this->useOpening = enable;
 }
