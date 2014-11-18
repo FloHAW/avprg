@@ -8,7 +8,7 @@ HEADERS += \
 win32 {
     SOURCES += \
         ../drumstick/winmidiinput.cpp \
-        ../drumstick/winmidioutput.cpp \
+        ../drumstick/winmidioutput.cpp
     LIBS += -lwinmm
 }
 macx {

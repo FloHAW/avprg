@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include <QDebug>
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -19,6 +19,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_note_1_clicked(bool checked)
 {
+    qDebug() << "note 1";
+
     if (checked){
         midiOutput.sendNoteOn(midichannel, 60, 127);
     }
@@ -150,19 +152,4 @@ void MainWindow::on_program_valueChanged(int arg1)
     midiOutput.sendProgram(midichannel, arg1);
 }
 
-void MainWindow::on_checkBox_clicked(bool checked)
-{
-    ui->note_1->setCheckable(checked);
-    ui->note_2->setCheckable(checked);
-    ui->note_3->setCheckable(checked);
-    ui->note_4->setCheckable(checked);
-    ui->note_5->setCheckable(checked);
-    ui->note_6->setCheckable(checked);
-    ui->note_7->setCheckable(checked);
-    ui->note_8->setCheckable(checked);
-    ui->note_9->setCheckable(checked);
-    ui->note_10->setCheckable(checked);
-    ui->note_11->setCheckable(checked);
-    ui->note_12->setCheckable(checked);
-}
 

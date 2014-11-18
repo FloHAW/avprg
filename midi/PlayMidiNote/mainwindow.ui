@@ -27,7 +27,7 @@
      <string/>
     </property>
     <property name="checkable">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="note_2">
@@ -42,6 +42,9 @@
     <property name="text">
      <string/>
     </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="note_3">
     <property name="geometry">
@@ -54,6 +57,9 @@
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="note_4">
@@ -68,6 +74,9 @@
     <property name="text">
      <string/>
     </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="note_5">
     <property name="geometry">
@@ -80,6 +89,9 @@
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="note_6">
@@ -94,6 +106,9 @@
     <property name="text">
      <string/>
     </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="note_7">
     <property name="geometry">
@@ -107,6 +122,9 @@
     <property name="text">
      <string/>
     </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="note_8">
     <property name="geometry">
@@ -119,6 +137,9 @@
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QSlider" name="volume">
@@ -273,22 +294,6 @@
      <string>Program:</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>220</y>
-      <width>71</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>toggle keys</string>
-    </property>
-    <property name="checked">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QPushButton" name="note_9">
     <property name="geometry">
      <rect>
@@ -302,7 +307,7 @@
      <string/>
     </property>
     <property name="checkable">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="note_10">
@@ -318,7 +323,7 @@
      <string/>
     </property>
     <property name="checkable">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="note_11">
@@ -334,7 +339,7 @@
      <string/>
     </property>
     <property name="checkable">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="note_12">
@@ -350,7 +355,7 @@
      <string/>
     </property>
     <property name="checkable">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
