@@ -7,10 +7,13 @@
 
 void testParentA()
 {
-    ParentA * parentA = new ParentA("P1", "C1");
+/*    ParentA * parentA = new ParentA("P1", "C1");
     qDebug() << parentA->info();
     parentA->childMethod();
     delete parentA;
+ */
+    ParentA parentA ("P1", "C1");
+    parentA.childMethod();
 }
 
 void testParentB(){
@@ -34,8 +37,8 @@ void testParentC(){
 
 int main(int argc, char *argv[])
 {
-    testParentA();
-    testParentB();
+//    testParentA();
+//    testParentB();
     testParentC();
 }
 

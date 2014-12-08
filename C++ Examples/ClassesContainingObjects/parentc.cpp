@@ -3,7 +3,7 @@
 
 ParentC::ParentC(const QString &parentName)
     :name(parentName)
-    , child(0)
+    , child(nullptr)
 {
 }
 ParentC::~ParentC(){

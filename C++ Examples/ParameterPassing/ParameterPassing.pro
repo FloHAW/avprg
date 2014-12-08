@@ -17,8 +17,9 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     parenta.cpp \
-    example.cpp 
+    example.cpp  
 
 HEADERS += \
     parenta.h \
-    example.h 
+    example.h \ 
+    point.h

@@ -62,7 +62,7 @@ void testArray(){
     qDebug() << "address of array[0]: " << &array[0];
     qDebug() << "address of array[1]: " << &array[1];
     showArray(array, 10);
-
+/*
     // copy array
     fillArray(array, 10, 17);
     int *copy = new int[10];
@@ -70,11 +70,12 @@ void testArray(){
     showArray(copy, 10);
 
     delete[] copy;
+  */
     delete[] array;
 }
 
 int main(int argc, char *argv[])
 {
-    testPointer();
+ //   testPointer();
     testArray();
 }

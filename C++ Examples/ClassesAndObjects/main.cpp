@@ -5,6 +5,7 @@
 
 void testExampleNewDelete(){
     Example* example = new Example("#1");
+
     (*example).method();
     example->method();
     // requires delete!!!
@@ -33,8 +34,8 @@ void testExampleUniquePtr(){
 
 int main(int argc, char *argv[])
 {
-    testExampleNewDelete();
+//    testExampleNewDelete();
     testExampleStack();
-    testExampleUniquePtr();
+//    testExampleUniquePtr();
 }
 
