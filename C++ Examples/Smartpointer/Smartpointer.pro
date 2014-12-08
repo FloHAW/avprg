@@ -18,8 +18,7 @@ TEMPLATE = app
 SOURCES += main.cpp \
         example.cpp \
         parent.cpp \
-    application.cpp \
-    smartpointer.cpp
+    application.cpp
 
 HEADERS += example.h \
         parent.h \

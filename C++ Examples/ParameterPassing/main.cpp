@@ -63,7 +63,7 @@ void testPoint(){
 int main(int argc, char *argv[])
 {
 //    testCallByReference();
-//    testCallByValue();
+    testCallByValue();
 //      testCallByPointer();
     testPoint();
 }

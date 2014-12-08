@@ -9,6 +9,12 @@ public:
     ~SmartPointer(){
         delete ptr;
     }
+    T& operator*(){
+        return *ptr;
+    }
+    T* operator->(){
+        return ptr;
+    }
 
 private:
     T *ptr;

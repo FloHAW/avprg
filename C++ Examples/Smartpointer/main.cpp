@@ -6,6 +6,11 @@
 using namespace std;
 
 
+void testMySmartPointer(){
+    SmartPointer<Example> example(new Example("E"));
+    example->method();
+}
+
 void testApplication(){
     Application app;
     app.show();
@@ -36,11 +41,12 @@ void testContainerSmartPointer(){
 
 int main(int argc, char *argv[])
 {
- //   shared_ptr<Example> example = createExample();
+    testMySmartPointer();
+
+    //   shared_ptr<Example> example = createExample();
   //  shared_ptr<Example> copyOfExample(example);
 //    testParent();
     testApplication();
-    SmartPointer<Example>example(new Example("E"));
     testContainerSmartPointer();
     return 0;
 }
